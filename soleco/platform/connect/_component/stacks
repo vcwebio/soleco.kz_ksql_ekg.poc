@@ -1,0 +1,3 @@
+boot/shutdown,kafka_connect,kafka_connect,kafka_connect
+start/stop,kafka_connect,kafka_connect,kafka_connect_ext_rest
+

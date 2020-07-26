@@ -1,0 +1,4 @@
+start/stop,metrics_monitor,metrics_monitor,metrics_monitor
+boot/shutdown,streamsets,streamsets,streamsets
+start/stop,streamsets,streamsets,streamsets_ui_streamsets
+

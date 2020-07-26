@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+
+
+	executionplane --silent docker volume create kz_ksql_ekg_poc_platform_kz_kz_kafka_secrets_volume
+	
+	executionplane --silent docker volume create kz_ksql_ekg_poc_platform_kz_kz_kafka_data_volume
+	
+	executionplane --silent docker volume create kz_ksql_ekg_poc_platform_kz_kz_zookeeper_secrets_volume
+	
+	executionplane --silent docker volume create kz_ksql_ekg_poc_platform_kz_kz_zookeeper_data_volume
+	
+	executionplane --silent docker volume create kz_ksql_ekg_poc_platform_kz_kz_zookeeper_log_volume
+	
+	executionplane --silent docker volume create kz_ksql_ekg_poc_platform_kz_metrics_monitor_heartbeat_data_volume
+	
+	executionplane --silent docker volume create kz_ksql_ekg_poc_platform_kz_metrics_monitor_heartbeat_monitors_volume
+	
+	executionplane --silent docker volume create kz_ksql_ekg_poc_platform_kz_metrics_overlay_metrics_overlay_volume
+	
+executionplane --silent docker run -v kz_ksql_ekg_poc_platform_kz_metrics_monitor_heartbeat_monitors_volume:/usr/share/heartbeat/monitors.d ${CONTECO_REGISTRY}$1 --interactive cp -r /soleco/platform/kz/_component/metrics_monitor_heartbeat_monitors_volume/* /usr/share/heartbeat/monitors.d
+		
+executionplane --silent docker run -v kz_ksql_ekg_poc_platform_kz_metrics_overlay_heartbeat_monitors_volume:/usr/share/heartbeat/monitors.d ${CONTECO_REGISTRY}$1 --interactive tar -C / -xvf /soleco/platform/kz/_component/metrics_overlay_heartbeat_monitors_volume.tar
+		

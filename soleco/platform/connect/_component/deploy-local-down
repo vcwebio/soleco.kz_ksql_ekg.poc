@@ -1,0 +1,78 @@
+#!/usr/bin/env bash
+
+
+
+executionplane --silent docker container prune --force
+
+continue="true"
+while [[ "true" == "$continue" ]] ;
+do
+	executionplane docker volume rm "kz_ksql_ekg_poc_platform_connect_kafka_connect_kafka_connect_secrets_volume"
+	result=$(docker volume ls | grep "kz_ksql_ekg_poc_platform_connect_kafka_connect_kafka_connect_secrets_volume")
+	if [[ "$result" == "" ]] ; then
+		continue="false"
+	else
+		sleep 3;
+	fi
+done;
+	
+continue="true"
+while [[ "true" == "$continue" ]] ;
+do
+	executionplane docker volume rm "kz_ksql_ekg_poc_platform_connect_kafka_connect_kafka_connect_connect_secrets_volume"
+	result=$(docker volume ls | grep "kz_ksql_ekg_poc_platform_connect_kafka_connect_kafka_connect_connect_secrets_volume")
+	if [[ "$result" == "" ]] ; then
+		continue="false"
+	else
+		sleep 3;
+	fi
+done;
+	
+continue="true"
+while [[ "true" == "$continue" ]] ;
+do
+	executionplane docker volume rm "kz_ksql_ekg_poc_platform_connect_kafka_connect_kafka_connect_data_volume"
+	result=$(docker volume ls | grep "kz_ksql_ekg_poc_platform_connect_kafka_connect_kafka_connect_data_volume")
+	if [[ "$result" == "" ]] ; then
+		continue="false"
+	else
+		sleep 3;
+	fi
+done;
+	
+continue="true"
+while [[ "true" == "$continue" ]] ;
+do
+	executionplane docker volume rm "kz_ksql_ekg_poc_platform_connect_kafka_connect_kafka_connect_jars_volume"
+	result=$(docker volume ls | grep "kz_ksql_ekg_poc_platform_connect_kafka_connect_kafka_connect_jars_volume")
+	if [[ "$result" == "" ]] ; then
+		continue="false"
+	else
+		sleep 3;
+	fi
+done;
+	
+continue="true"
+while [[ "true" == "$continue" ]] ;
+do
+	executionplane docker volume rm "kz_ksql_ekg_poc_platform_connect_metrics_monitor_heartbeat_data_volume"
+	result=$(docker volume ls | grep "kz_ksql_ekg_poc_platform_connect_metrics_monitor_heartbeat_data_volume")
+	if [[ "$result" == "" ]] ; then
+		continue="false"
+	else
+		sleep 3;
+	fi
+done;
+	
+continue="true"
+while [[ "true" == "$continue" ]] ;
+do
+	executionplane docker volume rm "kz_ksql_ekg_poc_platform_connect_metrics_monitor_heartbeat_monitors_volume"
+	result=$(docker volume ls | grep "kz_ksql_ekg_poc_platform_connect_metrics_monitor_heartbeat_monitors_volume")
+	if [[ "$result" == "" ]] ; then
+		continue="false"
+	else
+		sleep 3;
+	fi
+done;
+	

@@ -1,0 +1,3 @@
+boot/shutdown,schema_registry,schema_registry,schema_registry
+start/stop,schema_registry,schema_registry,schema_registry_ext_rest
+

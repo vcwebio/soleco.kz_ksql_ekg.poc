@@ -1,0 +1,66 @@
+#!/usr/bin/env bash
+
+
+
+executionplane --silent docker container prune --force
+
+continue="true"
+while [[ "true" == "$continue" ]] ;
+do
+	executionplane docker volume rm "kz_ksql_ekg_poc_platform_ekg_ekg_elasticsearch_volume"
+	result=$(docker volume ls | grep "kz_ksql_ekg_poc_platform_ekg_ekg_elasticsearch_volume")
+	if [[ "$result" == "" ]] ; then
+		continue="false"
+	else
+		sleep 3;
+	fi
+done;
+	
+continue="true"
+while [[ "true" == "$continue" ]] ;
+do
+	executionplane docker volume rm "kz_ksql_ekg_poc_platform_ekg_ekg_grafana_volume"
+	result=$(docker volume ls | grep "kz_ksql_ekg_poc_platform_ekg_ekg_grafana_volume")
+	if [[ "$result" == "" ]] ; then
+		continue="false"
+	else
+		sleep 3;
+	fi
+done;
+	
+continue="true"
+while [[ "true" == "$continue" ]] ;
+do
+	executionplane docker volume rm "kz_ksql_ekg_poc_platform_ekg_metrics_monitor_heartbeat_data_volume"
+	result=$(docker volume ls | grep "kz_ksql_ekg_poc_platform_ekg_metrics_monitor_heartbeat_data_volume")
+	if [[ "$result" == "" ]] ; then
+		continue="false"
+	else
+		sleep 3;
+	fi
+done;
+	
+continue="true"
+while [[ "true" == "$continue" ]] ;
+do
+	executionplane docker volume rm "kz_ksql_ekg_poc_platform_ekg_metrics_monitor_heartbeat_monitors_volume"
+	result=$(docker volume ls | grep "kz_ksql_ekg_poc_platform_ekg_metrics_monitor_heartbeat_monitors_volume")
+	if [[ "$result" == "" ]] ; then
+		continue="false"
+	else
+		sleep 3;
+	fi
+done;
+	
+continue="true"
+while [[ "true" == "$continue" ]] ;
+do
+	executionplane docker volume rm "kz_ksql_ekg_poc_platform_ekg_metrics_overlay_metrics_overlay_volume"
+	result=$(docker volume ls | grep "kz_ksql_ekg_poc_platform_ekg_metrics_overlay_metrics_overlay_volume")
+	if [[ "$result" == "" ]] ; then
+		continue="false"
+	else
+		sleep 3;
+	fi
+done;
+	
