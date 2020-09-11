@@ -7,5 +7,5 @@
 	
 	executionplane --silent docker volume create kz_ksql_ekg_poc_platform_streamsets_streamsets_streamsets_volume
 	
-executionplane --silent docker run -v kz_ksql_ekg_poc_platform_streamsets_metrics_monitor_heartbeat_monitors_volume:/usr/share/heartbeat/monitors.d ${CONTECO_REGISTRY}$1 --interactive cp -r /soleco/platform/streamsets/_component/metrics_monitor_heartbeat_monitors_volume/* /usr/share/heartbeat/monitors.d
+executionplane --silent docker run -v kz_ksql_ekg_poc_platform_streamsets_metrics_monitor_heartbeat_monitors_volume:/usr/share/heartbeat/monitors.d ${CONTECO_REGISTRY}$1 --interactive cp -r /soleco/platform/streamsets/_component/_volumes/metrics_monitor_heartbeat_monitors_volume/* /usr/share/heartbeat/monitors.d
 		
